@@ -1,0 +1,456 @@
+*{padding: 0; margin:0; box-sizing: border-box; font-family: arial; color:#333;}
+
+body{
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#040416+0,103551+65,7cbcaf+100 */
+background: #040416; /* Old browsers */
+background: -moz-linear-gradient(top, #040416 0%, #103551 65%, #7cbcaf 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #040416 0%,#103551 65%,#7cbcaf 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #040416 0%,#103551 65%,#7cbcaf 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#040416', endColorstr='#7cbcaf',GradientType=0 ); /* IE6-9 */
+}
+
+/*
+---------------------------------------
+DECORACIÓN
+---------------------------------------
+*/
+
+.suelo {
+	background: #c7d1dd;
+	width: 100%;
+	height: 300px;
+	position: fixed;
+	bottom: -100px;
+	z-index: 1;
+	border-radius: 100%;
+}
+
+.suelo > div{
+	background: #c7d1dd;
+	width: 100%;
+	height: 150px;
+	position: fixed;
+	bottom: -100px;
+	z-index: 1;
+}
+
+.crater1{
+	width: 400px;
+	height: 50px;
+	border-radius: 100%;
+	background:#57708e;
+	position: absolute;
+	bottom: 50px;
+	left: 120px;
+	z-index: 3;
+	border-top: 8px solid #252b5a;
+}
+
+.crater2{
+	width: 260px;
+	height: 40px;
+	border-radius: 100%;
+	background:#57708e;
+	position: absolute;
+	bottom: 50px;
+	right: 120px;
+	z-index: 3;
+	border-top: 8px solid #252b5a;
+}
+
+.nube1{
+	width: 260px;
+	height: 70px;
+	border-radius:35px;
+	background: #68f69e;
+	position: absolute;
+	bottom: 130px;
+	left: 150px;
+	box-shadow: 1300px 0 0 0 #68f69e;
+	animation: NUBES 45s linear infinite;
+}
+
+@keyframes NUBES {
+	0 {left:150px;}
+	100% {left:-1150px;}
+}
+
+.nube1::before{
+	content: "";
+	display: block;
+	width: 260px;
+	height: 70px;
+	position: relative;
+	top: 70px;
+	left: -60px;
+	border-radius:35px;
+	background: #68f69e;
+	box-shadow: 1300px 0 0 0 #68f69e;
+}
+.nube1::after{
+	content: "";
+	display: block;
+	width: 260px;
+	height: 70px;
+	position: relative;
+	top: -140px;
+	left: -80px;
+	border-radius:35px;
+	background: #68f69e;
+	box-shadow: 1300px 0 0 0 #68f69e;
+}
+
+.tierra{
+	width: 100px;
+	height: 100px;
+	background: #3150aa;
+	border-radius: 100%;
+	position: absolute;
+	left: 30%;
+	top: 40%;
+	z-index: 2;
+	transform: rotate(-15deg);
+	box-shadow: 6px 6px 0 0 rgba(33,33,33,0.2);
+}
+.tierra::before{
+	content: "";
+	display: block;
+	width: 80px;
+	height: 30px;
+	background: #fff;
+	border-radius: 15px;
+	position: absolute;
+	z-index: 3;
+	top: 10px;
+	left: -20px;
+	box-shadow: 6px 6px 0 0 rgba(33,33,33,0.2);
+}
+.tierra::after{
+	content: "";
+	display: block;
+	width: 66px;
+	height: 16px;
+	background: #fff;
+	border-radius: 8px;
+	position: absolute;
+	z-index: 3;
+	top: 55px;
+	left: 60px;
+	box-shadow: 6px 6px 0 0 rgba(33,33,33,0.2);
+}
+
+.tierra > div:first-child{
+	overflow: hidden;
+	width: 100px;
+	height: 100px;
+	background: #3150aa;
+	border-radius: 100%
+}
+
+.detalle-tierra:first-child{
+	width: 100px;
+	height: 50px;
+	background: #33c32b;
+	border-radius: 25px;
+	position: relative;
+	top: 20px;
+	left: -60px;
+}
+
+.detalle-tierra:nth-child(2){
+	width: 100px;
+	height: 50px;
+	background: #33c32b;
+	border-radius: 25px;
+	position: relative;
+	top: 0;
+	left: 50px;
+}
+
+.detalle-tierra:nth-child(3){
+	width: 100px;
+	height: 20px;
+	background: #33c32b;
+	border-radius: 25px;
+	position: relative;
+	top: -90px;
+	left: 60px;
+}
+
+.estrella{
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	border-radius: 100%;
+	background: #fff;
+	opacity:0.8;
+	z-index: 5;
+}
+.primera{
+	top: 10%;
+	left: 20%;
+}
+.segunda{
+	top: 48%;
+	left: 8%;
+}
+.tercera{
+	top: 40%;
+	right: 5%;
+}
+
+/*
+---------------------------------------
+ASTRONAUTA
+---------------------------------------
+*/
+
+.astronauta{
+	background: transparent;
+	position: absolute;
+	bottom: 110px;
+	right: 400px;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.bocadillo{
+	width: 400px;
+	height: 75px;
+	padding: 20px;
+	border-radius: 20px;
+	background: white;
+	position: absolute;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 18px;
+	font-weight: bold;
+	bottom: 360px;
+	right: 435px;
+	margin: 0 auto;
+	opacity: 0;
+	cursor: default;
+	z-index: 5;
+	transition: all 0.7s ease;
+}
+
+.bocadillo:before{
+	content: "";
+	width: 1;
+	height: 1;
+	border: 20px solid white;
+	transform: rotate(-135deg);
+	border-right-color: transparent;
+	border-bottom-color: transparent;
+	border-radius: 6px;
+	position: absolute;
+	top: 50px;
+	z-index: 0;
+	left: 318px;
+}
+
+.astronauta:hover + .bocadillo{
+	opacity: 1;
+	bottom: 390px;
+	display: block;
+	z-index: 5;
+}
+
+.casco{
+	width: 120px;
+	height: 120px;
+	border-radius: 100%;
+	position: relative;
+	border-left: 6px solid #665294;
+	border-bottom: 6px solid #665294;
+	top: 22px;
+	left: -35px;
+	background: #908ac4;
+	z-index: 4;
+	transform: rotate(-45deg);
+}
+
+.brillo{
+	width: 10px;
+	height: 10px;
+	border-radius: 100%;
+	background: white;
+	left: 28px;
+	top: 18px;
+	position: absolute;
+	box-shadow: 22px -2px 0 6px #fff;
+}
+
+.cuerpo{
+	width: 100px;
+	height: 80px;
+	border-radius: 75% 75% 5% 5%;
+	position: relative;
+	top: -20px;
+	left: -25px;
+	z-index: 3;
+	background: #e3e2e4;
+}
+.cuerpo::before{
+	content: "";
+	display: block;
+	width: 100px;
+	height: 40px;
+	border-radius: 100%;
+	position: relative;
+	top: 60px;
+	z-index: 3;
+	background: #e3e2e4;
+	border-bottom: 2px solid #89888a;
+}
+.cuadro{
+	width: 35px;
+	height: 40px;
+	background: #333;
+	z-index: 5;
+	top: 148px;
+	left: 7px;
+	border-radius: 12px;
+	position: absolute;
+}
+.cuadro::before {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 10px;
+	background: limegreen;
+	z-index: 5;
+	left: 12px;
+	top: 8px;
+	border-radius: 100%;
+	position: absolute;
+	border-bottom: 2px solid black;
+}
+.cuadro::after {
+	content: "";
+	display: block;
+	width: 10px;
+	height: 10px;
+	background: #de2727;
+	z-index: 5;
+	left: 12px;
+	top: 22px;
+	border-radius: 100%;
+	position: absolute;
+	border-bottom: 2px solid black;
+}
+
+.brazo-drcho{
+	width: 50px;
+	height: 80px;
+	background: #b5b5b5;
+	position: absolute;
+	z-index: 2;
+	top: 120px;
+	left: -55px;
+	border-radius: 20px 20px 40px 40px;
+	transform: rotate(45deg);
+	transition: all 0.5s ease;
+}
+
+.astronauta:hover .brazo-drcho{
+	top: 90px;
+	left: -70px;
+	transform: rotate(115deg);
+}
+
+.brazo-izq{
+	width: 50px;
+	height: 80px;
+	background: #b5b5b5;
+	position: absolute;
+	z-index: 2;
+	top: 103px;
+	left: 70px;
+	border-radius: 20px 20px 40px 40px;
+	transform: rotate(-90deg);
+}
+
+.pies{
+	width: 40px;
+	height: 60px;
+	position: relative;
+	top: -30px;
+	border-radius: 10px;
+	left: -20px;
+	z-index: 2;
+	background: #b5b5b5;
+}
+
+.pies:after{
+	content: "";
+	display: block;
+	width: 40px;
+	height: 60px;
+	position: relative;
+	border-radius: 10px;
+	left: 50px;
+	z-index: 2;
+	background: #b5b5b5;
+}
+
+.sombra{
+	width: 120px;
+	height: 25px;
+	border-radius: 100%;
+	background:#9aafc8;
+	position: absolute;
+	top: 215;
+	left: -35px;
+}
+
+.bandera{
+	width: 8px;
+	height: 300px;
+	background: #333333;
+	position: absolute;
+	bottom: 140px;
+	right: 385px;
+	z-index: 2;
+	border-radius: 12px;
+}
+
+.bandera > div{
+	width: 180px;
+	height: 105px;
+	background: pink;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.bandera > div > div:first-child{
+	width: 65px;
+	height: 45px;
+	background: #3150aa;
+	position: absolute;
+	z-index: 2;
+}
+
+.bandera > div > div:nth-child(2){
+	width: 180px;
+	height: 10px;
+	background: purple;
+	position: absolute;
+	top: -10px;
+	box-shadow: 0 5px 0 10px #de2727, 0 10px 0 20px white,
+	0 25px 0 20px #de2727, 0 40px 0 20px white,
+	0 55px 0 20px #de2727, 0 70px 0 20px white,
+	0 85px 0 20px #de2727;
+
+
+	/*
+	box-shadow: 0 5px 0 5px #de2727, 0 10px 0 10px white,
+	0 20px 0 10px #de2727,   0 30px 0 10px white, 0 40px 0 10px #de2727,
+	0 50px 0 10px white, 0 60px 0 10px #de2727, 0 70px 0 10px white,
+	0 80px 0 10px #de2727, 0 90px 0 10px white, 0 100px 0 10px #de2727,
+	0 110px 0 10px white, 0 120px 0 10px #de2727, 0 130px 0 10px white,
+	0 140px 0 10px #de2727, 0 150px 0 10px white, 0 160px 0 10px #de2727, 
+	0 170px 0 10px white;
+	*/
+}
