@@ -1,7 +1,7 @@
 'use strict';
 
 function getHashContent() {
-    return decodeURIComponent(location.hash.substring(1));
+    return atob(decodeURIComponent(location.hash.substring(1)));
 }
 
 function isLink(content) {
@@ -31,7 +31,7 @@ function guessType(content) {
 }
 
 function generateHash(content) {
-    return encodeURIComponent(content);
+    return encodeURIComponent(btoa(content));
 }
 
 function init() {
