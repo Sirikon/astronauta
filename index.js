@@ -59,3 +59,5 @@ function init() {
 }
 
 init();
+
+window.onhashchange = init;
