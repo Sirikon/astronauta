@@ -3,12 +3,12 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>Paisaje</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css?v=2">
+  <link rel="stylesheet" type="text/css" href="css/style.css?v=3">
 </head>
 <body>
 
 	<div id="app">
-		<div class="astronauta">
+		<div class="astronauta" v-bind:class="{enabled: editorEnabled}">
 			<div class="casco">
 				<div class="brillo"></div>
 			</div>
@@ -51,7 +51,7 @@
 		<div class="nube2"></div>
 
 		<div class="content-editor">
-			<div class="content-editor-box" v-if="editorEnabled">
+			<div class="content-editor-box" v-bind:class="{enabled: editorEnabled}">
 				<input type="text" v-model="content" />
 				<textarea type="text" readonly :value="link"></textarea>
 				<p>
@@ -64,6 +64,6 @@
 	</div>
 
 	<script src="vue.min.js" type="text/javascript"></script>
-	<script src="index.js?v=2" type="text/javascript"></script>
+	<script src="index.js?v=3" type="text/javascript"></script>
 </body>
 </html>
