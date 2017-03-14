@@ -34,30 +34,64 @@ function generateHash(content) {
     return encodeURIComponent(btoa(content));
 }
 
-function init() {
-    var hashContent = getHashContent();
-    if (hashContent === "") return;
-    var contentType = guessType(hashContent);
+function generateLink(content) {
+    var a = document.createElement('a');
+    a.href = location.href;
+    a.hash = generateHash(content);
+    return a.href;
+}
 
-    var bocadilloContainer = document.querySelector('.bocadillo');
-    bocadilloContainer.textContent = "";
+var data = {
+    content: 'one small step for a man, one giant leap for mankind in css man',
+    editorEnabled: false
+}
 
-    if (contentType === "image") {
-        var image = document.createElement('img');
-        image.className = "bocadillo-image";
-        image.src = hashContent;
-        bocadilloContainer.appendChild(image);
-    } else if (contentType === "link") {
-        var link = document.createElement('a');
-        link.className = "bocadillo-link";
-        link.href = hashContent;
-        link.textContent = hashContent;
-        bocadilloContainer.appendChild(link);
-    } else {
-        bocadilloContainer.textContent = hashContent;
+var computed = {
+    link: function() {
+        return generateLink(this.content);
+    },
+    contentType: function() {
+        return guessType(this.content);
     }
 }
 
+var app = new Vue({
+    el: '#app',
+    data: data,
+    computed: computed
+});
+
+function init() {
+    var hashContent = getHashContent();
+    if (hashContent !== "") {
+        data.content = hashContent;
+    }
+}
+
+// function init() {
+//     var hashContent = getHashContent();
+//     if (hashContent === "") return;
+//     var contentType = guessType(hashContent);
+
+//     var bocadilloContainer = document.querySelector('.bocadillo');
+//     bocadilloContainer.textContent = "";
+
+//     if (contentType === "image") {
+//         var image = document.createElement('img');
+//         image.className = "bocadillo-image";
+//         image.src = hashContent;
+//         bocadilloContainer.appendChild(image);
+//     } else if (contentType === "link") {
+//         var link = document.createElement('a');
+//         link.className = "bocadillo-link";
+//         link.href = hashContent;
+//         link.textContent = hashContent;
+//         bocadilloContainer.appendChild(link);
+//     } else {
+//         bocadilloContainer.textContent = hashContent;
+//     }
+// }
+
 init();
 
-window.onhashchange = init;
+// window.onhashchange = init;

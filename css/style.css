@@ -9,6 +9,97 @@ background: linear-gradient(to bottom, #040416 0%,#103551 65%,#7cbcaf 100%); /* 
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#040416', endColorstr='#7cbcaf',GradientType=0 ); /* IE6-9 */
 }
 
+#app {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+.content-editor {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	z-index: 999999;
+	width: 40%;
+}
+
+.content-editor-button {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	padding: 0.5em 0.7em;
+	background-color: #252b5a;
+	color: #68f69e;
+	border: none;
+	font-size: 1em;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 8px;
+	box-shadow: 0 3px 0 #57708e;
+	margin-bottom: 3px;
+	outline: none !important;
+	transform: translate(0, 0px);
+}
+
+.content-editor-button.enabled {
+	color: #252b5a;
+	background-color: #68f69e;
+}
+
+.content-editor-button:hover {
+	box-shadow: 0 5px 0 #57708e;
+	transform: translate(0, -2px);
+}
+
+.content-editor-button:active {
+	box-shadow: 0 1px 0 #57708e;
+	transform: translate(0, 2px);
+}
+
+.content-editor-box {
+	background-color: white;
+	width: 100%;
+	min-height: 20px;
+	margin-bottom: 10px;
+	border-radius: 8px;
+	box-shadow: 0 5px 0 #57708e;
+	padding: 10px;
+}
+
+.content-editor-box input,
+.content-editor-box textarea {
+	display: block;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	border: 3px solid #57708e;
+	font-size: 1.1em;
+	padding: 0.3em;
+	color: #252b5a;
+	outline: none !important;
+	margin-bottom: 10px;
+	width: 100%;
+	border-radius: 6px;
+	resize: vertical;
+}
+
+.content-editor-box textarea {
+	height: 90px;
+}
+
+.content-editor-box input:focus:not([readonly]),
+.content-editor-box textarea:focus:not([readonly]) {
+	border-color: #68f69e;
+}
+
+.content-editor-box input[readonly],
+.content-editor-box textarea[readonly] {
+	background-color: #57708e;
+	color: #68f69e;
+}
+
 /*
 ---------------------------------------
 DECORACIÓN
