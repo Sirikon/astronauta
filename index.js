@@ -17,7 +17,7 @@ function getExtensionFromLink(content) {
 
 var imageExtensions = ['png', 'jpg', 'jpeg', 'gif', 'bmp', 'svg'];
 function isImage(content) {
-    return imageExtensions.indexOf(getExtensionFromLink(content)) >= 0;
+    return imageExtensions.indexOf(getExtensionFromLink(content).toLowerCase()) >= 0;
 }
 
 function guessType(content) {
