@@ -214,7 +214,7 @@ ASTRONAUTA
 	cursor: pointer;
 }
 
-.bocadillo{
+.bocadillo {
 	width: 400px;
 	height: 75px;
 	padding: 20px;
@@ -232,6 +232,12 @@ ASTRONAUTA
 	cursor: default;
 	z-index: 5;
 	transition: all 0.7s ease;
+}
+
+.bocadillo-image {
+	max-width: 100%;
+	margin: auto;
+	transform: translate(0, -60%);
 }
 
 .bocadillo:before{
