@@ -9,7 +9,7 @@
 
 	<div id="app">
 		<div class="astronauta" v-bind:class="{enabled: editorEnabled}">
-			<div class="casco">
+			<div class="casco" @click="talk()">
 				<div class="brillo"></div>
 			</div>
 			<div class="cuerpo"></div>

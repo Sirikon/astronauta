@@ -58,7 +58,15 @@ var computed = {
 var app = new Vue({
     el: '#app',
     data: data,
-    computed: computed
+    computed: computed,
+    methods: {
+        talk: function() {
+            if (this.contentType === 'text' && !!SpeechSynthesisUtterance) {
+                var msg = new SpeechSynthesisUtterance(this.content);
+                window.speechSynthesis.speak(msg);
+            }
+        }
+    }
 });
 
 function init() {
